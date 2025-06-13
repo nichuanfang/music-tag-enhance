@@ -13,3 +13,8 @@ services:
       #- /path/to/your/sqlite:/data/sqlite
     environment:
       - 'TZ=Asia/Shanghai'
+      - POSTGRESQL_HOST=localhost
+      - POSTGRESQL_PORT=5432
+      - POSTGRESQL_DBNAME=your_db
+      - POSTGRESQL_USER=your_user
+      - POSTGRESQL_PASSWORD=your_password
