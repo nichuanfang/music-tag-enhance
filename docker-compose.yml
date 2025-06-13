@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  music-tag-enhance:
+    container_name: music-tag-enhance
+    build: .
+    stdin_open: true
+    tty: true
+    restart: always
+    network_mode: host
+    volumes:
+      - ./app:/app
+      # 可以挂载sqlite数据库文件
+      #- /path/to/your/sqlite:/data/sqlite
+    environment:
+      - 'TZ=Asia/Shanghai'
