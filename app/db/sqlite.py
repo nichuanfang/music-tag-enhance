@@ -1,8 +1,8 @@
-import sqlite4
+import sqlite3
 from ..config.settings import SQLITE_DB_PATH
 
 def get_sqlite_conn():
-    return sqlite4.connect(SQLITE_DB_PATH)
+    return sqlite3.connect(SQLITE_DB_PATH)
 
 def insert_data(table, data_list):
     if not data_list:
@@ -14,3 +14,10 @@ def insert_data(table, data_list):
     with get_sqlite_conn() as conn:
         conn.executemany(sql, [tuple(d.values()) for d in data_list])
         conn.commit()
+
+def fetch_data(sql, params=None):
+    with get_sqlite_conn() as conn:
+        cur = conn.execute(sql, params or ())
+        columns = [d[0] for d in cur.description]
+        rows = cur.fetchall()
+        return [dict(zip(columns, row)) for row in rows]
