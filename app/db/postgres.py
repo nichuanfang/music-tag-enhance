@@ -1,5 +1,5 @@
 import psycopg
-from ..config.settings import POSTGRESQL_CONFIG
+from config.settings import POSTGRESQL_CONFIG
 
 def get_pg_conn():
     return psycopg.connect(**POSTGRESQL_CONFIG)

@@ -1,5 +1,5 @@
 import sqlite3
-from ..config.settings import SQLITE_DB_PATH
+from config.settings import SQLITE_DB_PATH
 
 def get_sqlite_conn():
     return sqlite3.connect(SQLITE_DB_PATH)
