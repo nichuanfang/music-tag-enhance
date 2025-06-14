@@ -5,9 +5,6 @@ services:
     container_name: music-tag-enhance
     build:
       context: .
-    args:
-      - http_proxy=http://127.0.0.1:10809
-      - https_proxy=http://127.0.0.1:10809
     stdin_open: true
     tty: true
     network_mode: host
