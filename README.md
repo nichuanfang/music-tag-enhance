@@ -7,14 +7,8 @@
 
 ## 数据库同步功能
 
-本项目支持将SQLite数据库中的表同步到PostgreSQL中，支持自定义同步逻辑。  
+本项目支持将SQLite数据库中的表同步到PostgreSQL中，需要自定义同步逻辑。  
 例如可将SQLite的music-record表同步到PostgreSQL的pg-music-record表。
-
-## 使用说明
-
-- 配置 `docker-compose.yml` 中的数据库连接环境变量  
-- 使用 `app/sync/sync_service.py` 中的 `DataSyncService` 或 `ReverseDataSyncService` 进行同步  
-- 自定义同步逻辑可通过传入字段映射或自定义转换函数扩展
 
 ## 运行
 

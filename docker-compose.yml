@@ -9,12 +9,11 @@ services:
     network_mode: host
     volumes:
       - ./app:/app
-      # 可以挂载sqlite数据库文件
-      #- /path/to/your/sqlite:/data/sqlite
     environment:
-      - 'TZ=Asia/Shanghai'
-      - POSTGRESQL_HOST=localhost
+      - TZ=Asia/Shanghai
+      - POSTGRESQL_HOST=103.30.78.190
       - POSTGRESQL_PORT=5432
-      - POSTGRESQL_DBNAME=your_db
-      - POSTGRESQL_USER=your_user
-      - POSTGRESQL_PASSWORD=your_password
+      - POSTGRESQL_DBNAME=n8n
+      - POSTGRESQL_USER=root
+      - POSTGRESQL_PASSWORD=#hup7VA03iY^RN9
+      - SQLITE_DB_PATH=../docker/dockerfile_work/nas/music/MusicTagWeb/config
